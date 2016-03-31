@@ -745,6 +745,181 @@ syntax keyword clType cl_d3d11_device_set_khr
 
 " }}}
 
+" Extensions
+" {{{
+	
+syntax keyword clConstant cl_khr_3d_image_writes
+syntax keyword clConstant cl_khr_byte_addressable_store
+syntax keyword clConstant cl_khr_context_abort
+syntax keyword clConstant cl_khr_d3d10_sharing
+syntax keyword clConstant cl_khr_d3d11_sharing
+syntax keyword clConstant cl_khr_depth_images
+syntax keyword clConstant cl_khr_device_enqueue_local_arg_types
+syntax keyword clConstant cl_khr_dx9_media_sharing
+syntax keyword clConstant cl_khr_egl_event
+syntax keyword clConstant cl_khr_egl_image
+syntax keyword clConstant cl_khr_fp16
+syntax keyword clConstant cl_khr_fp64
+syntax keyword clConstant cl_khr_gl_depth_images
+syntax keyword clConstant cl_khr_gl_event
+syntax keyword clConstant cl_khr_gl_msaa_sharing
+syntax keyword clConstant cl_khr_gl_sharing
+syntax keyword clConstant cl_khr_global_int32_base_atomics
+syntax keyword clConstant cl_khr_global_int32_extended_atomics
+syntax keyword clConstant cl_khr_icd
+syntax keyword clConstant cl_khr_il_program
+syntax keyword clConstant cl_khr_image2d_from_buffer
+syntax keyword clConstant cl_khr_initialize_memory
+syntax keyword clConstant cl_khr_int64_base_atomics
+syntax keyword clConstant cl_khr_int64_extended_atomics
+syntax keyword clConstant cl_khr_local_int32_base_atomics
+syntax keyword clConstant cl_khr_local_int32_extended_atomics
+syntax keyword clConstant cl_khr_mipmap_image
+syntax keyword clConstant cl_khr_priority_hints
+syntax keyword clConstant cl_khr_spir
+syntax keyword clConstant cl_khr_srgb_image_writes
+syntax keyword clConstant cl_khr_subgroups
+syntax keyword clConstant cl_khr_terminate_context
+syntax keyword clConstant cl_khr_throttle_hints
+
+" }}}
+
+" APIs
+" {{{
+	
+syntax keyword clFunction clBuildProgram
+syntax keyword clFunction clCloneKernel
+syntax keyword clFunction clCompileProgram
+syntax keyword clFunction clCreateBuffer
+syntax keyword clFunction clCreateCommandQueueWithProperties
+syntax keyword clFunction clCreateContext
+syntax keyword clFunction clCreateContextFromType
+syntax keyword clFunction clCreateEventFromEGLSyncKHR
+syntax keyword clFunction clCreateEventFromGLsyncKHR
+syntax keyword clFunction clCreateFromD3D10BufferKHR
+syntax keyword clFunction clCreateFromD3D10Texture2DKHR
+syntax keyword clFunction clCreateFromD3D10Texture3DKHR
+syntax keyword clFunction clCreateFromD3D11BufferKHR
+syntax keyword clFunction clCreateFromD3D11Texture2DKHR
+syntax keyword clFunction clCreateFromD3D11Texture3DKHR
+syntax keyword clFunction clCreateFromDX9MediaSurfaceKHR
+syntax keyword clFunction clCreateFromEGLImageKHR
+syntax keyword clFunction clCreateFromGLBuffer
+syntax keyword clFunction clCreateFromGLRenderbuffer
+syntax keyword clFunction clCreateFromGLTexture
+syntax keyword clFunction clCreateImage
+syntax keyword clFunction clCreateKernel
+syntax keyword clFunction clCreateKernelsInProgram
+syntax keyword clFunction clCreatePipe
+syntax keyword clFunction clCreateProgramWithBinary
+syntax keyword clFunction clCreateProgramWithBuiltInKernels
+syntax keyword clFunction clCreateProgramWithIL
+syntax keyword clFunction clCreateProgramWithSource
+syntax keyword clFunction clCreateSamplerWithProperties
+syntax keyword clFunction clCreateSubBuffer
+syntax keyword clFunction clCreateSubDevices
+syntax keyword clFunction clCreateUserEvent
+syntax keyword clFunction clCreate_memflagsInc
+syntax keyword clFunction clEnqueueAcquireD3D10ObjectsKHR
+syntax keyword clFunction clEnqueueAcquireD3D11ObjectsKHR
+syntax keyword clFunction clEnqueueAcquireDX9MediaSurfacesKHR
+syntax keyword clFunction clEnqueueAcquireEGLObjectsKHR
+syntax keyword clFunction clEnqueueAcquireGLObjects
+syntax keyword clFunction clEnqueueBarrierWithWaitList
+syntax keyword clFunction clEnqueueCopyBuffer
+syntax keyword clFunction clEnqueueCopyBufferRect
+syntax keyword clFunction clEnqueueCopyBufferToImage
+syntax keyword clFunction clEnqueueCopyImage
+syntax keyword clFunction clEnqueueCopyImageToBuffer
+syntax keyword clFunction clEnqueueFillBuffer
+syntax keyword clFunction clEnqueueFillImage
+syntax keyword clFunction clEnqueueMapBuffer
+syntax keyword clFunction clEnqueueMapImage
+syntax keyword clFunction clEnqueueMarkerWithWaitList
+syntax keyword clFunction clEnqueueMigrateMemObjects
+syntax keyword clFunction clEnqueueNDRangeKernel
+syntax keyword clFunction clEnqueueNativeKernel
+syntax keyword clFunction clEnqueueReadBuffer
+syntax keyword clFunction clEnqueueReadBufferRect
+syntax keyword clFunction clEnqueueReadImage
+syntax keyword clFunction clEnqueueReleaseD3D10ObjectsKHR
+syntax keyword clFunction clEnqueueReleaseD3D11ObjectsKHR
+syntax keyword clFunction clEnqueueReleaseDX9MediaSurfacesKHR
+syntax keyword clFunction clEnqueueReleaseEGLObjectsKHR
+syntax keyword clFunction clEnqueueReleaseGLObjects
+syntax keyword clFunction clEnqueueSVMFree
+syntax keyword clFunction clEnqueueSVMMap
+syntax keyword clFunction clEnqueueSVMMemFill
+syntax keyword clFunction clEnqueueSVMMemcpy
+syntax keyword clFunction clEnqueueSVMMigrateMem
+syntax keyword clFunction clEnqueueSVMUnmap
+syntax keyword clFunction clEnqueueUnmapMemObject
+syntax keyword clFunction clEnqueueWriteBuffer
+syntax keyword clFunction clEnqueueWriteBufferRect
+syntax keyword clFunction clEnqueueWriteImage
+syntax keyword clFunction clFinish
+syntax keyword clFunction clFlush
+syntax keyword clFunction clGetCommandQueueInfo
+syntax keyword clFunction clGetContextInfo
+syntax keyword clFunction clGetDeviceAndHostTimer
+syntax keyword clFunction clGetDeviceIDs
+syntax keyword clFunction clGetDeviceIDsFromD3D10KHR
+syntax keyword clFunction clGetDeviceIDsFromD3D11KHR
+syntax keyword clFunction clGetDeviceIDsFromDX9MediaAdapterKHR
+syntax keyword clFunction clGetDeviceInfo
+syntax keyword clFunction clGetEventInfo
+syntax keyword clFunction clGetEventProfilingInfo
+syntax keyword clFunction clGetExtensionFunctionAddressForPlatform
+syntax keyword clFunction clGetGLContextInfoKHR
+syntax keyword clFunction clGetGLObjectInfo
+syntax keyword clFunction clGetGLTextureInfo
+syntax keyword clFunction clGetHostTimer
+syntax keyword clFunction clGetImageInfo
+syntax keyword clFunction clGetKernelArgInfo
+syntax keyword clFunction clGetKernelInfo
+syntax keyword clFunction clGetKernelSubGroupInfo
+syntax keyword clFunction clGetKernelWorkGroupInfo
+syntax keyword clFunction clGetMemObjectInfo
+syntax keyword clFunction clGetPipeInfo
+syntax keyword clFunction clGetPlatformIDs
+syntax keyword clFunction clGetPlatformInfo
+syntax keyword clFunction clGetProgramBuildInfo
+syntax keyword clFunction clGetProgramInfo
+syntax keyword clFunction clGetSamplerInfo
+syntax keyword clFunction clGetSupportedImageFormats
+syntax keyword clFunction clIcdGetPlatformIDsKHR
+syntax keyword clFunction clLinkProgram
+syntax keyword clFunction clReleaseCommandQueue
+syntax keyword clFunction clReleaseContext
+syntax keyword clFunction clReleaseDevice
+syntax keyword clFunction clReleaseEvent
+syntax keyword clFunction clReleaseKernel
+syntax keyword clFunction clReleaseMemObject
+syntax keyword clFunction clReleaseProgram
+syntax keyword clFunction clReleaseSampler
+syntax keyword clFunction clRetainCommandQueue
+syntax keyword clFunction clRetainContext
+syntax keyword clFunction clRetainDevice
+syntax keyword clFunction clRetainEvent
+syntax keyword clFunction clRetainKernel
+syntax keyword clFunction clRetainMemObject
+syntax keyword clFunction clRetainProgram
+syntax keyword clFunction clRetainSampler
+syntax keyword clFunction clSVMAlloc
+syntax keyword clFunction clSVMFree
+syntax keyword clFunction clSetDefaultDeviceCommandQueue
+syntax keyword clFunction clSetEventCallback
+syntax keyword clFunction clSetKernelArg
+syntax keyword clFunction clSetKernelArgSVMPointer
+syntax keyword clFunction clSetKernelExecInfo
+syntax keyword clFunction clSetMemObjectDestructorCallback
+syntax keyword clFunction clSetUserEventStatus
+syntax keyword clFunction clTerminateContextKHR
+syntax keyword clFunction clUnloadPlatformCompiler
+syntax keyword clFunction clWaitForEvents
+
+" }}}
+
 " Default highlighting
 if version >= 508 || !exists("did_c_opencl_syntax_inits")
   if version < 508
@@ -754,7 +929,7 @@ if version >= 508 || !exists("did_c_opencl_syntax_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
   HiLink clType                Type
-  "HiLink clFunction            Function
+  HiLink clFunction            Function
   HiLink clConstant            Constant
   delcommand HiLink
 endif
