@@ -20,8 +20,7 @@ endif
 syn keyword clStorageClass	global __global local __local constant __constant private __private generic __generic
 " function qualifiers
 syn keyword clStorageClass      kernel __kernel  __attribute__
-syn keyword clStorageClass      read_only __read_only write_only __write_only 
-								read_write __read_write
+syn keyword clStorageClass      read_only __read_only write_only __write_only read_write __read_write
 syn keyword clStorageClass      complex imaginary
 
 " scalar types
@@ -79,9 +78,7 @@ syn match clCast                "convert_\(uchar\|char\|ushort\|short\|uint\|int
 syn match clCast                "convert_\(uchar\|char\|ushort\|short\|uint\|int\|ulong\|long\|float\|double\))\(2\|3\|4\|8\|16\)_sat_\(rte\|rtz\|rtp\|rtn\)"
 
 " work item functions
-syn keyword clFunction	get_work_dim get_global_size get_global_id get_local_size
-						get_local_id get_num_groups get_group_id get_global_offset
-						get_enqueued_local_size get_global_linear_id get_local_linear_id
+syn keyword clFunction	get_work_dim get_global_size get_global_id get_local_size get_local_id get_num_groups get_group_id get_global_offset get_enqueued_local_size get_global_linear_id get_local_linear_id
 
 " math functions
 syn keyword clFunction          cos cosh cospi acos acosh acospi
@@ -134,7 +131,7 @@ syn match clFunction            "vstorea_half\(2\|3\|4\|8\|16\)_\(rte\|rtz\|rtp\
 " image read and write functions
 syn match clFunction            "read_image\(f\|i\|ui\|h\)"
 syn match clFunction            "write_image\(f\|i\|ui\|h\)"
-syn keyword clFunction          get_image_width get_image_height get_image_depth get_image_channel_data_type get_image_channel_order get_image_dim get_image_array_size(
+syn keyword clFunction          "get_image_\(\|width\|height\|depth\|channel_data_type\|channel_order\|dim\|array_size\)"
 
 
 " explicit memory fence functions
@@ -163,14 +160,12 @@ syn keyword clType memory_order memory_scope
 syn keyword clConstant ATOMIC_VAR_INIT
 
 " memory operation ordering
-syn keyword clConstant 	memory_order_relaxed memory_order_acquire 
-						memory_order_release memory_order_acq_rel
-						memory_order_seq_cst
+syn keyword clConstant 	memory_order_relaxed memory_order_acquire memory_order_release memory_order_acq_rel	memory_order_seq_cst
 
-syn keyword clConstant 	memory_scope_work_item memory_scope_work_group
-						memory_scope_device memory_scope_all_svm_devices
+syn keyword clConstant 	memory_scope_work_item memory_scope_work_group memory_scope_device memory_scope_all_svm_devices
 
 syn match clType 		atomic_flag
+
 syn match clType 		"atomic_\(int\|uint\|long\|ulong\|float\|double\|intptr_t\|uintptr_t\|size_t\|ptrdiff_t\)"
 
 syn keyword clConstant          MAXFLOAT HUGE_VALF INFINITY NAN
@@ -196,8 +191,7 @@ syn keyword clConstant          CLK_ADDRESS_NONE CLK_FILTER_NEAREST CLK_FILTER_L
 syn keyword clConstant          CLK_GLOBAL_MEM_FENCE CLK_LOCAL_MEM_FENCE
 								CLK_IMAGE_MEM_FENCE
 
-syn keyword clConstant	__OPENCL_VERSION__ CL_VERSION_1_0 CL_VERSION_1_1 
-						CL_VERSION_1_2 CL_VERSION_2_0 __OPENCL_C_VERSION__ __ENDIAN_LITTLE__ __IMAGE_SUPPORT__ __FAST_RELAXED_MATH__ __func__
+syn keyword clConstant	__OPENCL_VERSION__ CL_VERSION_1_0 CL_VERSION_1_1 CL_VERSION_1_2 CL_VERSION_2_0 __OPENCL_C_VERSION__ __ENDIAN_LITTLE__ __IMAGE_SUPPORT__ __FAST_RELAXED_MATH__ __func__
 
 " work group functions
 syn match clFunction 	work_group_all work_group_any work_group_broadcast
