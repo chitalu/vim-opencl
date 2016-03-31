@@ -44,15 +44,13 @@ syn keyword clType      ptrdiff_t intptr_t uintptr_t
 
 syn keyword clType		image1d_buffer_t image1d_array_t
 
-syn keyword clType		image2d_t image2d_array_t image2d_array_depth_t   
-						image2d_depth_t 
+syn keyword clType		image2d_t image2d_array_t image2d_array_depth_t image2d_depth_t 
 
 syn keyword clType		image3d_t
 
 syn keyword clType		sampler_t 
 
-syn keyword clType 		event_t queue_t ndrange_t clk_event_t reserve_id_t 			
-						cl_mem_fence_flags kernel_enqueue_flags_t
+syn keyword clType 		event_t queue_t ndrange_t clk_event_t reserve_id_t cl_mem_fence_flags kernel_enqueue_flags_t
 
 " reserved types
 syn keyword clType              bool2 bool3 bool4 bool8 bool16
@@ -131,7 +129,7 @@ syn match clFunction            "vstorea_half\(2\|3\|4\|8\|16\)_\(rte\|rtz\|rtp\
 " image read and write functions
 syn match clFunction            "read_image\(f\|i\|ui\|h\)"
 syn match clFunction            "write_image\(f\|i\|ui\|h\)"
-syn keyword clFunction          "get_image_\(\|width\|height\|depth\|channel_data_type\|channel_order\|dim\|array_size\)"
+syn keyword clFunction          "get_image_\(width\|height\|depth\|channel_data_type\|channel_order\|dim\|array_size\)"
 
 
 " explicit memory fence functions
@@ -141,19 +139,18 @@ syn keyword clFunction          barrier mem_fence read_mem_fence write_mem_fence
 syn keyword clFunction          async_work_group_copy async_work_group_strided_copy wait_group_events prefetch
 
 " address space qualifier functions
-syn keyword clFunction	to_global to_local to_private get_fence
+syn keyword clFunction			to_global to_local to_private get_fence
 
 " atomic functions
 syn match clFunction            "atom_\(add\|sub\|xchg\|inc\|dec\|cmpxchg\|min\|max\|and\|or\|xor\|init\)"
 
-syn match clFunction atomic_work_item_fence atomic_store atomic_store_explicit atomic_load atomic_load_explicit atomic_exchange atomic_exchange_explicit atomic_compare_exchange_strong  atomic_compare_exchange_strong_explicit  atomic_compare_exchange_weak atomic_compare_exchange_weak_explicit
+syn match clFunction 		"atomic_\(work_item_fence\|store\|store_explicit\|load\|load_explicit\|exchange\|exchange_explicit\|compare_exchange_strong\|compare_exchange_strong_explicit\|compare_exchange_weak\|compare_exchange_weak_explicit\|flag_clear\|flag_clear_explicit\)"
 
 syn match clFunction "atomic_fetch_\(\|add\|sub\|or\|xor\|and\|min\|max\)"
+
 syn match clFunction "atomic_fetch_\(\|add\|sub\|or\|xor\|and\|min\|max\)_explicit"
 
-syn match clFunction atomic_flag_clear atomic_flag_clear_explicit
-
-syn match clFunction printf
+syn keyword clFunction printf
 
 syn keyword clType memory_order memory_scope
 
@@ -164,7 +161,7 @@ syn keyword clConstant 	memory_order_relaxed memory_order_acquire memory_order_r
 
 syn keyword clConstant 	memory_scope_work_item memory_scope_work_group memory_scope_device memory_scope_all_svm_devices
 
-syn match clType 		atomic_flag
+syn keyword clType 		atomic_flag
 
 syn match clType 		"atomic_\(int\|uint\|long\|ulong\|float\|double\|intptr_t\|uintptr_t\|size_t\|ptrdiff_t\)"
 
@@ -188,41 +185,40 @@ syn keyword clConstant          CL_SNORM_INT8 CL_SNORM_INT16 CL_UNORM_INT8 CL_UN
 
 syn keyword clConstant          CLK_ADDRESS_NONE CLK_FILTER_NEAREST CLK_FILTER_LINEAR CLK_ADDRESS_MIRRORED_REPEAT 
 
-syn keyword clConstant          CLK_GLOBAL_MEM_FENCE CLK_LOCAL_MEM_FENCE
-								CLK_IMAGE_MEM_FENCE
+syn keyword clConstant          CLK_GLOBAL_MEM_FENCE CLK_LOCAL_MEM_FENCE CLK_IMAGE_MEM_FENCE
 
 syn keyword clConstant	__OPENCL_VERSION__ CL_VERSION_1_0 CL_VERSION_1_1 CL_VERSION_1_2 CL_VERSION_2_0 __OPENCL_C_VERSION__ __ENDIAN_LITTLE__ __IMAGE_SUPPORT__ __FAST_RELAXED_MATH__ __func__
 
 " work group functions
-syn match clFunction 	work_group_all work_group_any work_group_broadcast
+syn keyword clFunction 	work_group_all work_group_any work_group_broadcast
 
-syn match clFunction 	"work_group_reduce_\(add\|min\|max\)
-syn match clFunction 	"work_group_scan_\(exclusive\|inclusive\)_\(add\|min\|max\)
+syn match clFunction 	"work_group_reduce_\(add\|min\|max\)"
+syn match clFunction 	"work_group_scan_\(exclusive\|inclusive\)_\(add\|min\|max\)"
 
-" pipes"
-syn match clType 		pipe
+" pipes
+syn keyword clType 		pipe
 syn keyword clConstant CLK_NULL_RESERVE_ID
 
-syn match clFunction read_pipe write_pipe reserve_read_pipe reserve_write_pipe commit_read_pipe commit_write_pipe is_valid_reserve_id
+syn keyword clFunction read_pipe write_pipe reserve_read_pipe reserve_write_pipe commit_read_pipe commit_write_pipe is_valid_reserve_id
 
-syn match clFunction work_group_reserve_read_pipe work_group_reserve_write_pipe work_group_commit_read_pipe work_group_commit_write_pipe
+syn keyword clFunction work_group_reserve_read_pipe work_group_reserve_write_pipe work_group_commit_read_pipe work_group_commit_write_pipe
 
-syn match clFunction get_pipe_num_packets get_pipe_max_packets
+syn keyword clFunction get_pipe_num_packets get_pipe_max_packets
 
-" enqueueng kerels
-syn match clFunction enqueue_kernel
+" enqueueng kernels
+syn keyword clFunction enqueue_kernel
 
 syn keyword clConstant CLK_INVALID_QUEUE CLK_INVALID_NDRANGE CLK_INVALID_EVENT_WAIT_LIST CLK_DEVICE_QUEUE_FULL CLK_INVALID_ARG_SIZE CLK_EVENT_ALLOCATION_FAILURE CLK_OUT_OF_RESOURCES
 
 syn keyword clConstant CLK_ENQUEUE_FLAGS_NO_WAIT CLK_ENQUEUE_FLAGS_WAIT_KERNEL CLK_ENQUEUE_FLAGS_WAIT_WORK_GROUP66
 
-syn match clFunction get_kernel_work_group_size get_kernel_preferred_work_group_size_multiple enqueue_marker
+syn keyword clFunction get_kernel_work_group_size get_kernel_preferred_work_group_size_multiple enqueue_marker
 
-syn match clFunction retain_event release_event create_user_event is_valid_event capture_event_profiling_info
+syn keyword clFunction retain_event release_event create_user_event is_valid_event capture_event_profiling_info
 
 syn keyword clConstant CLK_PROFILING_COMMAND_EXEC_TIME CL_PROFILING_COMMAND_END CL_PROFLING_COMMAND_START CL_PROFILING_COMMAND_COMPLETE
 
-syn match clFunction get_default_queue ndrange_1D ndrange_2D ndrange_3D
+syn keyword clFunction get_default_queue ndrange_1D ndrange_2D ndrange_3D
 
 hi def link clStorageClass	StorageClass
 hi def link clStructure         Structure
